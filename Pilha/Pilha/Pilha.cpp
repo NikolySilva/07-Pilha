@@ -87,13 +87,42 @@ void push()
 	cin >> novo->valor;
 	novo->prox = NULL;
 
+	NO* aux = topo;
+
+	if (aux == NULL)
+	{
+		topo = novo;
+		
+	}
+	else
+	{
+		novo->prox = aux;
+		topo = novo;
+		cout << "Topo e igual a: " << topo->valor << endl;
+		cout << "Topo e igual a: " << topo->prox->valor << endl;
+		
+	}
+	
+
 
 }
 
 void pop()
 {
+	NO* aux = topo;
+	NO* paraRemover = NULL;
 
-	
+	if (topo == NULL)
+	{
+		cout << "Pilha vazia\n";
+	}
+	else
+	{
+		cout << "O elemento a ser removido:" << topo->valor << endl;
+		paraRemover = topo;
+		topo = topo->prox;
+		free(paraRemover);
+	}
 
 }
 
